@@ -42,6 +42,16 @@ $("#add-train-btn").on("click", function(event) {
     $("#frequency")
       .val()
       .trim()
+  ); firstTrain = moment(
+    $("#first-train")
+      .val()
+      .trim(),
+    "HH:mm"
+  ).format("HH:mm");
+  frequency = parseInt(
+    $("#frequency")
+      .val()
+      .trim()
   );
 
   console.log(firstTrain);
@@ -89,6 +99,7 @@ $("#add-train-btn").on("click", function(event) {
 //creat firebase adding employee
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   //store data into a variable
+  console.log(childSnapshot.val());
   var trainName = childSnapshot.val().name;
   var destination = childSnapshot.val().destination;
   var firstTrain = childSnapshot.val().firstTrain;
@@ -97,7 +108,8 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var minutesTillTrain = childSnapshot.val().minutesTillTrain;
 
   //add each trains data into the table
-  $("#employee-table > tbody").append(
+  $("#employee-table").append(
+ 
     "<tr><td>" +
       trainName +
       "</td><td>" +

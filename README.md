@@ -1,3 +1,3 @@
 # Train-Scheduler
 
-Not fully finished, Need to restart this project.
+Almost done, need to add some style and fix ux.

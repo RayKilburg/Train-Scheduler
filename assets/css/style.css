@@ -2,5 +2,8 @@ body {
   background-color: rgb(223, 230, 233);
 }
 .jumbotron {
-  /* box-shadow: -10px 5px #888888; */
+border-radius: 5px;
+}
+.panel-title{
+  text-align: center;
 }
